@@ -1,0 +1,42 @@
+{
+  "name": "reggit",
+  "version": "0.0.0-monorepo",
+  "description": "A powerful regex-like filtering and notification engine for Reddit designed to run for free on AWS",
+  "keywords": [
+    "reddit",
+    "regex",
+    "filtering",
+    "notification",
+    "aws",
+    "lambda"
+  ],
+  "author": {
+    "name": "Bradley Odell",
+    "url": "https://github.com/BTOdell"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BTOdell/reggit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/BTOdell/reggit/issues"
+  },
+  "homepage": "https://github.com/BTOdell/reggit#readme",
+  "license": "AGPL-3.0-only",
+  "private": true,
+  "workspaces": [
+    "client",
+    "functions/*"
+  ],
+  "devDependencies": {
+    "serverless": "^2.69.1",
+    "typescript": "^4.5.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=7.14.0"
+  }
+}

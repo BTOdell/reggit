@@ -1,0 +1,23 @@
+{
+    "name": "client",
+    "version": "0.0.0",
+    "private": true,
+    "devDependencies": {
+        "@types/react": "^16.14.8",
+        "@types/react-dom": "^16.9.13",
+        "@types/react-router-dom": "^5.1.7",
+        "react": "^16.14.0",
+        "react-dom": "^16.14.0",
+        "react-hot-loader": "^4.13.0",
+        "react-router-dom": "^5.2.0",
+        "tslib": "^2.2.0"
+    },
+    "scripts": {
+        "build": "tsc -b && webpack --mode production",
+        "rebuild": "run-s -s clean webpack",
+        "clean": "run-p -cs clean:*",
+        "clean:build": "shx rm -rf ./.build",
+        "clean:js": "shx rm -rf ./*.js ./*.js.map ./*.d.ts ./*.tsbuildinfo",
+        "clean:dist": "shx rm -rf ./dist"
+    }
+}
