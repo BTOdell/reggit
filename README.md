@@ -13,6 +13,7 @@ Unfortunately, the [Amazon API Gateway](https://aws.amazon.com/api-gateway/) ser
 * [Lambda](https://aws.amazon.com/lambda/): Serves the SPA, powers the REST API, and scrapes the Reddit website at periodic intervals.
 * [DynamoDB](https://aws.amazon.com/dynamodb/): Persistent storage for configuration of the filtering and notification engine.
 * [EventBridge](https://aws.amazon.com/eventbridge/): Trigger web-scraping lambda functions periodically.
+* [SNS](https://aws.amazon.com/sns/): Send email notifications when search criteria is met during web-scraping of Reddit.
 * [Optional] [Cognito](https://aws.amazon.com/cognito/): Provide access control to the web app and enable support for multiple users.
 * [Optional] [Route 53](https://aws.amazon.com/route53/): Allow the web app to be accessible from a memorable URL instead of an IP address.
 

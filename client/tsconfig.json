@@ -1,5 +1,5 @@
 {
-    "extends": "../tsconfig.server.json",
+    "extends": "../tsconfig.node.json",
     "compilerOptions": {
         "declarationDir": "./.build"
     },
@@ -7,9 +7,6 @@
         "webpack.config.ts"
     ],
     "references": [
-        {
-            "path": "../packages/webpack-base/src"
-        },
         {
             "path": "src"
         }
