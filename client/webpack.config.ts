@@ -1,6 +1,7 @@
-import { cpus } from "os";
-import { resolve } from "path";
-import { Configuration, EnvironmentPlugin } from "webpack";
+import {cpus} from "os";
+import {resolve} from "path";
+import type {Configuration} from "webpack";
+import {EnvironmentPlugin} from "webpack";
 import * as HtmlWebpackPlugin from "html-webpack-plugin";
 import HtmlInlineScriptWebpackPlugin = require("html-inline-script-webpack-plugin");
 
@@ -21,21 +22,20 @@ export = (env: unknown, argv: { mode: string }): Configuration => {
 
     const htmlWebpackPluginOptions: HtmlWebpackPlugin.Options = {
         filename: resolve(outputPath, "index.html"),
+        template: "index.html",
         inject: "body",
     };
     plugins.push(new HtmlWebpackPlugin(htmlWebpackPluginOptions));
-    if (!dev) {
-        plugins.push(new HtmlInlineScriptWebpackPlugin());
-    }
+    plugins.push(new HtmlInlineScriptWebpackPlugin());
 
     return {
         mode: dev ? "development" : "production",
         context: inputPath,
         entry: [
-            "./index"
+            "./index.tsx",
         ],
         resolve: {
-            extensions: [".ts", ".tsx", ".js", ".scss"]
+            extensions: [".ts", ".tsx", ".js", ".scss"],
         },
         module: {
             rules: [
@@ -46,11 +46,6 @@ export = (env: unknown, argv: { mode: string }): Configuration => {
                         configFile: resolve(inputPath, "tsconfig.json"),
                         projectReferences: true,
                     },
-                },
-                {
-                    test: /\.js$/,
-                    enforce: "pre",
-                    loader: "source-map-loader",
                 },
                 {
                     test: /\.scss$/,

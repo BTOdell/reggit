@@ -8,6 +8,16 @@
         "moduleResolution": "Node",
         "target": "ES2020",
         "forceConsistentCasingInFileNames": true,
+        "jsx": "react",
+        "importHelpers": true,
+        "plugins": [
+            {
+                "name": "typescript-plugin-css-modules",
+                "options": {
+                    "classnameTransform": "camelCaseOnly"
+                }
+            }
+        ],
         "strict": true,
         "noImplicitAny": true,
         "noImplicitOverride": true,
